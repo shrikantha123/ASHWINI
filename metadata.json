@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Ashwini's Skin Hair and Cosmetology Clinic",
+  "description": "Consult Dr. Ashwini K.R (MBBS, DDVL) at Dr. Ashwini's Skin, Hair & Cosmetology Clinic in Vijayanagar, Bengaluru for clinical dermatology, aesthetic procedures, and advanced laser treatments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Ashwini's Skin, Hair & Cosmetology Clinic | Vijayanagar, Bengaluru</title>
+<meta name="description" content="Consult Dr. Ashwini K.R (MBBS, DDVL) at Dr. Ashwini's Skin, Hair & Cosmetology Clinic in Vijayanagar, Bengaluru for clinical dermatology, aesthetic procedures, and advanced laser treatments.">
+<meta property="og:title" content="Dr. Ashwini's Skin, Hair & Cosmetology Clinic | Vijayanagar, Bengaluru">
+<meta property="og:description" content="Consult Dr. Ashwini K.R (MBBS, DDVL) at Dr. Ashwini's Skin, Hair & Cosmetology Clinic in Vijayanagar, Bengaluru for clinical dermatology, aesthetic procedures, and advanced laser treatments.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+/* =========================================================
+   1. DESIGN TOKENS  (change the brand blue in ONE place)
+   ========================================================= */
+:root{
+  --brand:#1f5bff;          /* accents, links, icons            */
+  --brand-dark:#0b2fa8;     /* dark buttons, footer, headings   */
+  --brand-mid:#9cb8ff;      /* doctor cards                     */
+  --brand-tint:#d3e0ff;     /* hero card, doctors band          */
+  --brand-soft:#eef3ff;     /* soft card backgrounds            */
+
+  /* neutrals */
+  --ink:#0f1b2d;
+  --muted:#4a5568;
+  --line:#dfe6f3;
+  --white:#fff;
+  --warm:#c98d70;
+  --lilac:#e6c9f3;
+
+  --radius-xl:24px;
+  --radius-lg:18px;
+  --radius-md:12px;
+  --gap:18px;
+  --container:1380px;
+  --pad:clamp(14px,3.2vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--pad)}
+section{margin-top:clamp(44px,7vw,100px)}
+.h-xl{font-size:clamp(28px,4vw,54px);font-weight:300;line-height:1.14;letter-spacing:-.02em;color:var(--brand-dark)}
+.h-lg{font-size:clamp(24px,3.4vw,48px);font-weight:300;line-height:1.15;letter-spacing:-.02em;color:var(--brand-dark)}
+.center{text-align:center}
+.sub{font-size:clamp(14.5px,1.35vw,18px);line-height:1.65;color:#2b3a55;max-width:660px}
+.center .sub{margin:12px auto 0}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;transition:background .2s,color .2s,border-color .2s,transform .2s;white-space:nowrap}
+.btn-dark{background:var(--brand-dark);color:#fff;border:1.5px solid var(--brand-dark)}
+.btn-dark:hover{background:var(--brand);border-color:var(--brand)}
+.btn-line{background:transparent;color:var(--brand-dark);border:1.5px solid var(--brand)}
+.btn-line:hover{background:var(--brand);color:#fff}
+.btn-white{background:#fff;color:var(--brand-dark);border:1.5px solid #fff}
+.btn-white:hover{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+.btn-wa{background:#25D366;color:#fff;border:1.5px solid #25D366}
+.btn-wa:hover{background:#1ebe57;border-color:#1ebe57;color:#fff}
+.circ{width:38px;height:38px;border-radius:50%;display:inline-grid;place-items:center;border:1.5px solid var(--brand);color:var(--brand);flex:none;transition:background .2s,color .2s}
+.circ.fill,.circ:hover{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
+.ico{font-size:18px;line-height:1;display:inline-block}
+.circ i{font-size:18px}.tool i{font-size:18px}
+
+/* ---------- image slots ---------- */
+.img{width:100%;height:100%;object-fit:cover}
+.ph{width:100%;height:100%;min-height:80px;display:grid;place-items:center;color:var(--brand);background:linear-gradient(135deg,var(--brand-tint),#f6f9ff 60%,var(--brand-mid));}
+.ph i{font-size:34px;opacity:.55}
+
+/* =========================================================
+   2. NAVBAR (Mobile-first - Doctor Name Only)
+   ========================================================= */
+.nav{margin-top:14px;border:1px solid var(--line);border-radius:var(--radius-lg);padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;background:#fff;z-index:20}
+.logo{display:flex;align-items:center;gap:8px;font-weight:600;font-size:clamp(16px,2vw,21px);color:var(--brand-dark);min-width:0}
+.logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.logo i{font-size:22px;color:var(--brand);flex:none}
+.nav-links{position:absolute;top:calc(100% + 8px);right:0;width:min(290px,100%);background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 24px 48px -28px rgba(11,47,168,.45);flex-direction:column;gap:0;padding:6px 22px;display:none;font-size:15px;color:var(--muted);z-index:30}
+.nav-links.open{display:flex}
+.nav-links a{position:relative;padding:14px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.nav-links a:last-child{border-bottom:0}
+.nav-links a:hover,.nav-links a.active{color:var(--brand-dark)}
+.nav-links a.active::before{content:"•";margin-right:4px;color:var(--brand)}
+.tool{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;position:relative;color:var(--ink);flex:none}
+.avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;background:var(--brand-tint)}
+.burger{display:grid;cursor:pointer}
+
+/* =========================================================
+   3. HERO (Mobile-First Responsive)
+   ========================================================= */
+.hero{margin-top:14px;display:grid;grid-template-columns:1fr;gap:var(--gap)}
+.hero-left{background:var(--brand-tint);border-radius:var(--radius-xl);padding:22px 18px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:10px;padding:7px 12px;font-size:12px;width:fit-content;max-width:100%;color:var(--brand-dark);flex-wrap:wrap;line-height:1.35}
+.pill i{color:var(--brand)}
+.hero h1{margin-top:14px;max-width:560px;font-size:clamp(26px,6.2vw,52px);line-height:1.15}
+.hero-sub{margin-top:12px;max-width:500px;font-size:14.5px;color:var(--ink);line-height:1.55}
+.hero-cta{margin-top:20px;display:grid;grid-template-columns:1fr;gap:10px}
+.hero-cta .btn{width:100%;justify-content:center}
+.hero-right{position:relative;border-radius:var(--radius-xl);overflow:hidden;min-height:340px;background:var(--brand-tint);display:flex;flex-direction:column;justify-content:flex-end}
+.hero-right .img,.hero-right .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stats{position:relative;z-index:2;margin:180px 10px 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.stat{background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:10px;padding:10px 8px;text-align:center}
+.stat b{display:block;font-size:clamp(14px,3.6vw,26px);font-weight:600;color:var(--brand-dark);line-height:1.2}
+.stat span{display:block;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.2}
+
+/* =========================================================
+   4. SERVICES (tabs + image cards)
+   ========================================================= */
+.svc-tabs{margin:22px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:6px;background:var(--brand-soft);border:1px solid var(--line);border-radius:14px;width:100%;max-width:780px}
+.svc-tab{flex:1 1 auto;padding:11px 12px;border-radius:10px;font-size:13px;font-weight:500;color:var(--brand-dark);display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;transition:background .2s,color .2s}
+.svc-tab small{min-width:22px;height:22px;border-radius:99px;background:#fff;color:var(--brand-dark);font-size:11px;display:grid;place-items:center;padding:0 5px}
+.svc-tab:hover{background:#fff}
+.svc-tab[aria-selected="true"]{background:var(--brand-dark);color:#fff}
+.svc-tab[aria-selected="true"] small{background:rgba(255,255,255,.2);color:#fff}
+.svc-grid{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--gap)}
+.svc{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc:hover{transform:translateY(-4px);border-color:var(--brand);box-shadow:0 18px 40px -22px rgba(11,47,168,.45)}
+.svc-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(110deg,var(--brand-tint) 30%,#f6f9ff 50%,var(--brand-tint) 70%);background-size:220% 100%;animation:shimmer 2.2s linear infinite}
+.svc:nth-child(4n+2) .svc-media{background:linear-gradient(135deg,var(--lilac),#f8eefc)}
+.svc:nth-child(4n+3) .svc-media{background:linear-gradient(135deg,#ffe0d0,#fff3ec)}
+.svc:nth-child(4n+4) .svc-media{background:linear-gradient(135deg,#cdeee5,#eefaf6)}
+.svc-media .img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.svc-media .img.loaded{opacity:1;transform:scale(1)}
+.svc-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,47,168,.28));opacity:0;transition:opacity .4s;pointer-events:none}
+.svc:hover .svc-media::after{opacity:1}
+.svc:hover .svc-media .img.loaded{transform:scale(1.07)}
+.svc-no{position:absolute;top:12px;left:12px;z-index:1;background:rgba(255,255,255,.95);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:500;color:var(--brand-dark)}
+.svc-badge{position:absolute;top:12px;right:12px;z-index:1;background:var(--brand-dark);color:#fff;border-radius:99px;padding:4px 10px;font-size:11px;font-weight:500;display:inline-flex;align-items:center;gap:4px}
+.svc-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.svc-body h3{font-size:18px;font-weight:500;color:var(--brand-dark);line-height:1.28}
+.svc-body p{font-size:13.5px;color:var(--muted)}
+.svc-body p::first-letter{text-transform:uppercase}
+.svc-foot{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:500;color:var(--brand)}
+.svc-foot .circ{width:34px;height:34px}
+.svc:hover .svc-foot .circ{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
+.svc-cta{margin-top:28px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+
+/* =========================================================
+   6. FAQ  (questions and answers only)
+   ========================================================= */
+.faq-list{margin:32px auto 0;max-width:880px;display:grid;gap:12px}
+.qa{background:var(--brand-soft);border:1px solid var(--line);border-radius:var(--radius-md);transition:background .2s,border-color .2s}
+.qa[open]{background:#fff;border-color:var(--brand)}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;font-size:clamp(15px,1.4vw,18.5px);color:var(--brand-dark);font-weight:500}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary i{flex:none;width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:18px;color:var(--brand-dark);transition:transform .25s,background .2s,color .2s}
+.qa[open] summary i{transform:rotate(45deg);background:var(--brand-dark);color:#fff}
+.qa p{padding:0 18px 18px;font-size:14px;color:var(--muted);max-width:760px}
+.faq-foot{margin-top:22px;text-align:center;font-size:14px;color:var(--muted)}
+.faq-foot a{color:var(--brand);font-weight:500}
+
+/* =========================================================
+   7. DOCTORS  (full profile section - Mobile-first)
+   ========================================================= */
+.band{background:var(--brand-tint);padding:clamp(40px,6vw,80px) 0}
+.band .wrap>.sub{color:var(--ink)}
+.dprofiles{margin-top:32px;display:grid;gap:var(--gap)}
+.dprof{background:#fff;border-radius:var(--radius-xl);overflow:hidden;display:grid;grid-template-columns:1fr;text-align:left;scroll-margin-top:24px}
+.dprof-photo{position:relative;min-height:390px;background:var(--brand-mid)}
+.dprof-photo .img,.dprof-photo .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.dprof-tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-radius:10px;padding:9px 14px;font-size:13px;font-weight:500;color:var(--brand-dark);display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px -8px rgba(11,47,168,.3)}
+.dprof-tag i{color:var(--brand);font-size:16px}
+.dprof-body{padding:clamp(20px,3.6vw,52px);display:flex;flex-direction:column;justify-content:center;gap:20px}
+.dprof-body h3{font-size:clamp(26px,3.2vw,44px);font-weight:300;letter-spacing:-.02em;line-height:1.1;color:var(--brand-dark)}
+.dprof-quals{margin-top:6px;font-size:14px;color:var(--muted)}
+.dprof-role{margin-top:8px;font-size:15px;font-weight:500;color:var(--brand)}
+.dprof-intro{font-size:14.5px;color:var(--ink);max-width:600px}
+.dprof h4{font-size:12px;font-weight:600;color:var(--brand-dark);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.dprof-list{display:grid;gap:10px}
+.dprof-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink)}
+.dprof-list .tick{width:22px;height:22px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;flex:none;margin-top:1px}
+.dprof-list .tick i{font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--brand-soft);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;color:var(--brand-dark)}
+a.chip:hover{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+.dprof-facts{display:grid;grid-template-columns:1fr;gap:12px}
+.fact{background:var(--brand-soft);border-radius:var(--radius-md);padding:14px 16px;font-size:12.5px;color:var(--muted)}
+.fact b{display:block;font-size:13.5px;font-weight:500;color:var(--brand-dark);margin-top:2px}
+.dprof-cta{display:flex;gap:10px;flex-wrap:wrap}
+
+/* =========================================================
+   8. REVIEWS (Mobile-first)
+   ========================================================= */
+.rev-head{max-width:720px;margin:0 auto;text-align:center}
+.rev-head p{margin:12px auto 0;font-size:clamp(14.5px,1.35vw,18px);line-height:1.65;color:#2b3a55;max-width:620px}
+.rev-grid{margin-top:30px;display:grid;grid-template-columns:1fr;gap:var(--gap)}
+.rev{position:relative;display:flex;flex-direction:column;gap:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 20px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.rev:hover{transform:translateY(-6px);border-color:var(--brand);box-shadow:0 22px 44px -26px rgba(11,47,168,.5)}
+.rev-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.stars{display:flex;gap:3px;color:#f5a623;font-size:19px;line-height:1}
+.stars i{display:inline-block;transition:transform .3s}
+.rev:hover .stars i{animation:starPop .5s ease both;animation-delay:calc(var(--s)*60ms)}
+.rating-num{font-size:13px;font-weight:500;color:var(--brand-dark);background:var(--brand-soft);border-radius:99px;padding:4px 10px}
+.rev q{display:block;quotes:none;font-size:clamp(15px,1.35vw,18px);line-height:1.6;color:var(--ink);font-weight:400;flex:1}
+.rev-foot{border-top:1px solid var(--line);padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.who{display:flex;align-items:center;gap:14px;min-width:0}
+.who .avatar{width:50px;height:50px;flex:none;border:3px solid var(--brand-tint);box-shadow:0 0 0 1px var(--brand);display:grid;place-items:center;color:var(--brand-dark);background:var(--brand-tint);font-size:16px;font-weight:500;transition:transform .35s}
+.rev:hover .who .avatar{transform:scale(1.08) rotate(-3deg)}
+.avatar .img{object-position:center 18%}
+.who b{display:block;font-size:15px;font-weight:500;color:var(--brand-dark);line-height:1.25}
+.who small{display:inline-block;margin-top:4px;font-size:12px;font-weight:500;color:var(--brand-dark);background:var(--brand-soft);border-radius:99px;padding:3px 10px}
+.qmark{font-size:34px;line-height:1;color:var(--brand-mid);flex:none}
+.pager{margin-top:26px;display:flex;align-items:center;justify-content:center;gap:16px}
+.pager .circ{width:42px;height:42px}
+.pager .circ[disabled]{opacity:.35;cursor:default}
+.dots{display:flex;gap:8px}
+.dots span{width:8px;height:8px;border-radius:99px;background:var(--brand-tint);transition:width .3s,background .3s}
+.dots span.on{width:26px;background:var(--brand-dark)}
+
+/* =========================================================
+   9. CONTACT / VERTICAL BOOKING & EMBEDDED GOOGLE MAP
+   ========================================================= */
+.touch{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg, #0b2fa8 0%, #1644d6 52%, #1f5bff 100%);
+  color:#fff;
+  border-radius:var(--radius-xl);
+  padding:clamp(28px,5.5vw,68px) var(--pad);
+  text-align:center;
+  box-shadow:0 32px 64px -28px rgba(11,47,168,.55);
+}
+.touch::before,.touch::after{
+  content:"";
+  position:absolute;
+  border:32px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  pointer-events:none;
+}
+.touch::before{width:520px;height:520px;left:-200px;top:-260px}
+.touch::after{width:620px;height:620px;right:-260px;bottom:-340px}
+.touch>*{position:relative;z-index:1}
+.touch .h-xl{color:#fff}
+.faces{margin:22px auto 12px;display:flex;justify-content:center;align-items:center}
+.faces .avatar{width:76px;height:76px;border:3px solid #fff;margin-left:-14px;background:var(--brand-mid);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.faces .avatar:nth-child(2){width:94px;height:94px;z-index:1}
+.faces .avatar:first-child{margin-left:0}
+.touch-cap{font-size:15px;color:#dbe7ff;max-width:560px;margin:0 auto}
+.touch-cta{margin-top:18px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+
+/* Vertical Booking Card */
+.book-card{
+  margin:28px auto 0;
+  max-width:540px;
+  background:#fff;
+  color:var(--ink);
+  border-radius:var(--radius-lg);
+  padding:clamp(18px,3.5vw,32px);
+  text-align:left;
+  box-shadow:0 24px 48px -18px rgba(6,20,75,.45);
+}
+.consult-switch{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  padding:5px;
+  background:var(--brand-soft);
+  border:1px solid var(--line);
+  border-radius:12px;
+  margin-bottom:18px;
+}
+.consult-btn{
+  padding:11px 10px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:500;
+  color:var(--brand-dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  transition:all .2s ease;
+  text-align:center;
+}
+.consult-btn.active{
+  background:var(--brand-dark);
+  color:#fff;
+  box-shadow:0 6px 16px -6px rgba(11,47,168,.5);
+}
+.form-vertical{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.field-group{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.field-group label{
+  font-size:12.5px;
+  font-weight:500;
+  color:var(--brand-dark);
+}
+.form-vertical input,
+.form-vertical select{
+  width:100%;
+  padding:13px 14px;
+  border:1.5px solid var(--line);
+  border-radius:10px;
+  font:inherit;
+  font-size:14px;
+  background:#f9fbff;
+  color:var(--ink);
+  transition:border-color .2s,box-shadow .2s,background .2s;
+}
+.form-vertical input:focus,
+.form-vertical select:focus{
+  outline:none;
+  background:#fff;
+  border-color:var(--brand);
+  box-shadow:0 0 0 4px rgba(31,91,255,.14);
+}
+.form-vertical .btn-submit{
+  width:100%;
+  padding:14px 20px;
+  font-size:15px;
+  margin-top:4px;
+}
+.form-msg{
+  font-size:13.5px;
+  min-height:20px;
+  color:var(--brand-dark);
+  text-align:center;
+  font-weight:500;
+  margin-top:4px;
+}
+
+.details{
+  margin:28px auto 0;
+  max-width:980px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  text-align:left;
+}
+.details div{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--radius-md);
+  padding:15px 16px;
+  font-size:13px;
+  color:#e2ebff;
+}
+.details b{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:13.5px;
+  color:#fff;
+  font-weight:600;
+  margin-bottom:4px;
+}
+.details a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:500}
+
+/* Embedded Real Google Map Card */
+.map-box{
+  margin:24px auto 0;
+  max-width:980px;
+  background:#fff;
+  border-radius:var(--radius-lg);
+  padding:10px;
+  box-shadow:0 20px 44px -18px rgba(6,20,75,.45);
+  overflow:hidden;
+}
+.map-frame{
+  width:100%;
+  height:320px;
+  border:0;
+  border-radius:12px;
+  display:block;
+}
+
+/* =========================================================
+   10. FOOTER & FLOATING WHATSAPP BUTTON
+   ========================================================= */
+footer{margin:clamp(44px,7vw,100px) 0 24px}
+.foot{position:relative;overflow:hidden;background:var(--brand-dark);color:#fff;border-radius:var(--radius-xl);padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr;gap:28px;min-height:420px}
+.foot .logo{color:#fff}.foot .logo i{color:#fff}
+.foot h4{font-size:15px;font-weight:500;margin-bottom:14px}
+.foot li{margin-bottom:10px;font-size:13px;color:#c9d6ff}
+.foot li a:hover{color:#fff}
+.foot-tag{margin-top:12px;font-size:13px;color:#c9d6ff}
+.sub-form{margin-top:20px;display:flex;background:transparent;border:1px solid #5b7be0;border-radius:10px;padding:4px;max-width:320px}
+.sub-form input{flex:1;min-width:0;background:none;border:0;color:#fff;padding:0 12px;font:inherit;font-size:13px}
+.sub-form input::placeholder{color:#a9bbf5}
+.sub-form button{background:#fff;color:var(--brand-dark);border-radius:8px;padding:9px 14px;font-size:13px;font-weight:500}
+.social{margin-top:20px;display:flex;gap:10px}
+.social a{width:36px;height:36px;border-radius:50%;border:1px solid #8aa2ee;display:grid;place-items:center;transition:background .2s}
+.social a:hover{background:rgba(255,255,255,.15)}
+.social i{font-size:17px}
+.mark{display:none;position:absolute;left:40px;bottom:-28px;font-size:clamp(90px,14vw,190px);font-weight:600;letter-spacing:-.04em;color:rgba(255,255,255,.08);line-height:1;pointer-events:none}
+.legal{position:static;display:flex;flex-wrap:wrap;gap:16px;font-size:11px;color:#c9d6ff;grid-column:1/-1}
+.legal a:hover{color:#fff}
+
+/* Floating WhatsApp Button */
+.wa-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:90;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#25D366;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  box-shadow:0 14px 32px -6px rgba(37,211,102,.65);
+  transition:transform .25s ease,box-shadow .25s ease,background .2s ease;
+}
+.wa-float:hover{
+  background:#1ebe57;
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 18px 36px -6px rgba(37,211,102,.8);
+}
+.wa-float i{
+  font-size:22px;
+  line-height:1;
+}
+@media (max-width:480px){
+  .wa-float{
+    padding:12px 15px;
+    right:14px;
+    bottom:14px;
+    font-size:13px;
+  }
+}
+
+/* =========================================================
+   11. RESPONSIVE BREAKPOINTS (Mobile-First Progression)
+   ========================================================= */
+@media (min-width:560px){
+  .hero-cta{display:flex;flex-wrap:wrap}
+  .hero-cta .btn{width:auto}
+  .hero-left{padding:clamp(24px,3vw,40px)}
+  .hero-right{min-height:460px}
+  .stats{position:absolute;left:18px;right:18px;bottom:18px;margin:0;gap:12px}
+  .stat{padding:14px 16px;text-align:left}
+  .dprof-facts{grid-template-columns:repeat(2,1fr)}
+  .details{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+  .map-frame{height:380px}
+}
+
+@media (min-width:900px){
+  .nav{margin-top:24px;padding:0 24px;height:72px}
+  .hero{margin-top:24px;grid-template-columns:1fr 1fr}
+  .hero-left{min-height:600px;gap:40px}
+  .hero-right{min-height:600px}
+  .dprof{grid-template-columns:.85fr 1.15fr}
+  .dprof.flip{grid-template-columns:1.15fr .85fr}
+  .dprof.flip .dprof-photo{order:2}
+  .dprof-photo{min-height:560px}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (min-width:1120px){
+  .rev-grid{grid-template-columns:repeat(3,1fr)}
+  .details{grid-template-columns:repeat(4,1fr)}
+  .foot{grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}
+  .mark{display:block}
+  .legal{position:absolute;right:clamp(28px,4vw,48px);bottom:28px;gap:28px}
+}
+
+/* =========================================================
+   12. MOTION  (transitions + animations)
+   ========================================================= */
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes zoomOut{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
+@keyframes starPop{0%{transform:scale(1)}50%{transform:scale(1.4) rotate(-12deg)}100%{transform:scale(1)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.18)}28%{transform:scale(1)}42%{transform:scale(1.12)}70%{transform:scale(1)}}
+@keyframes faqOpen{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes gridSwap{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.reveal{opacity:0}
+.reveal.in{opacity:1;animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*80ms)}
+
+.hero-right .img{animation:zoomOut 1.8s cubic-bezier(.2,.7,.2,1) both}
+.stat{transition:transform .3s,box-shadow .3s}
+.stat:hover{transform:translateY(-4px);box-shadow:0 14px 28px -18px rgba(11,47,168,.55)}
+.stats .stat:nth-child(1){animation:floatY 5s ease-in-out infinite}
+.stats .stat:nth-child(2){animation:floatY 5s ease-in-out .6s infinite}
+.stats .stat:nth-child(3){animation:floatY 5s ease-in-out 1.2s infinite}
+.pill{animation:fadeIn .9s ease both}
+
+.logo i{display:inline-block;animation:beat 2.6s ease-in-out infinite;transform-origin:center}
+.nav-links.open{animation:faqOpen .25s ease both}
+.nav-links a{transition:color .2s,padding-left .25s}
+.nav-links a:hover{padding-left:6px}
+.burger{transition:background .2s,color .2s,transform .2s}
+.burger:hover{background:var(--brand-dark);color:#fff;transform:rotate(90deg)}
+
+.btn{position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px -14px rgba(11,47,168,.7)}
+.btn:active{transform:translateY(0) scale(.98)}
+.circ:hover{transform:scale(1.08)}
+.svc:hover .svc-foot .circ{transform:translate(2px,-2px)}
+.svc-foot .circ{transition:background .25s,color .25s,border-color .25s,transform .25s}
+
+.svc-grid.swap .svc{animation:gridSwap .5s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*50ms)}
+.svc-tab{transition:background .25s,color .25s,transform .2s}
+.svc-tab:active{transform:scale(.97)}
+
+.qa{transition:background .25s,border-color .25s,box-shadow .25s,transform .25s}
+.qa:hover{transform:translateX(4px)}
+.qa[open] p{animation:faqOpen .4s ease both}
+
+.dprof{transition:box-shadow .35s,transform .35s}
+.dprof:hover{box-shadow:0 30px 60px -36px rgba(11,47,168,.55)}
+.dprof-photo .img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.dprof:hover .dprof-photo .img{transform:scale(1.04)}
+.chip{transition:background .2s,color .2s,transform .2s,border-color .2s}
+.chip:hover{transform:translateY(-2px)}
+.fact{transition:transform .25s,background .25s}
+.fact:hover{transform:translateY(-3px);background:var(--brand-tint)}
+
+.rev-grid.swap .rev{animation:gridSwap .55s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*90ms)}
+
+.faces .avatar{transition:transform .35s}
+.faces .avatar:hover{transform:translateY(-6px) scale(1.05);z-index:2}
+.touch::before{animation:floatY 9s ease-in-out infinite}
+.touch::after{animation:floatY 11s ease-in-out 1s infinite}
+.social a{transition:background .2s,transform .25s}
+.social a:hover{transform:translateY(-3px)}
+.foot li a{display:inline-block;transition:color .2s,transform .2s}
+.foot li a:hover{transform:translateX(4px)}
+
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--brand),var(--brand-dark));transform-origin:0 50%;transform:scaleX(0);z-index:100;transition:transform .1s linear}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1}
+}
+</style>
+</head>
+
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- Floating WhatsApp Button -->
+<a class="wa-float" id="waFloat" href="https://wa.me/918073021907?text=Hello%20Dr.%20Ashwini%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp with Dr. Ashwini K.R">
+  <i class="ri-whatsapp-fill" aria-hidden="true"></i>
+  <span>WhatsApp: 080730 21907</span>
+</a>
+
+<div class="wrap">
+  <header class="nav" id="home">
+    <a class="logo" href="#home" id="logo"></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary"></nav>
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <a href="https://wa.me/918073021907?text=Hello%20Dr.%20Ashwini%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="padding:8px 12px;font-size:13px">
+        <i class="ico ri-whatsapp-line" aria-hidden="true"></i>
+        <span>080730 21907</span>
+      </a>
+      <button class="tool burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero" id="hero"></div>
+    <section id="services"></section>
+  </main>
+</div>
+
+<section class="band" id="doctors"></section>
+
+<div class="wrap">
+  <section id="reviews"></section>
+  <section id="faqs"></section>
+  <section id="contact"></section>
+  <footer id="footer"></footer>
+</div>
+
+<script>
+/* =========================================================
+   CONTENT — Pure HTML + Vanilla JS (No TSX)
+   Replace PHOTO.ashwini with "download.jpg" or data URL if hosting locally
+   ========================================================= */
+const PHOTO = {
+  ashwini: "download.jpg"
+};
+
+const SITE = {
+  name: "Dr. Ashwini K.R",
+  fullName: "Dr. Ashwini's Skin, Hair & Cosmetology Clinic",
+  phone: "+91 80730 21907",
+  phoneHref: "tel:+918073021907",
+  whatsappNumber: "080730 21907",
+  whatsappHref: "https://wa.me/918073021907?text=Hello%20Dr.%20Ashwini%2C%20I%20would%20like%20to%20book%20a%20consultation.",
+  hours: "Mon–Sat, 10:00am–9:00pm",
+  hoursLong: "Monday to Saturday, 10:00 AM to 9:00 PM (10:00–21:00)",
+  address: "2094, Ground Floor, 9th Cross, 5th Main Rd, Opp. St. John's High School, Hampi Nagar, Vijayanagar, Bengaluru, Karnataka 560104",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Dr+Ashwini's+Skin+Hair+and+Cosmetology+Clinic+2094+9th+cross+5th+Main+Rd+Hampi+Nagar+Vijayanagar+Bengaluru+560104",
+  mapEmbedUrl: "https://maps.google.com/maps?q=Dr%20Ashwini's%20Skin%20Hair%20and%20Cosmetology%20Clinic%202094%209th%20cross%205th%20Main%20Rd%20Hampi%20Nagar%20Vijayanagar%20Bengaluru%20560104&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  tagline: "Clinical Dermatology, Hair Care, Lasers & Cosmetology Clinic in Vijayanagar, Bengaluru. In-Clinic & Online Consultations Available.",
+  nav: [
+    ["Home","#home"],["Services","#services"],["Meet Our Doctor","#doctors"],
+    ["Reviews","#reviews"],["FAQs","#faqs"],["Book Appointment","#contact"]
+  ]
+};
+
+const U = (id,w=1000)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const P = (id,w=1000)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
+const IMAGES = {
+  hero: U("1713085085470-fba013d67e65", 1400),
+  doctors: [PHOTO.ashwini],
+  faces: [PHOTO.ashwini, U("1742280159636-3a06652ac9d9", 600), U("1713085085470-fba013d67e65", 600)]
+};
+
+/* Relevant clinical procedure photos matched to each treatment name */
+const SERVICE_PHOTOS = {
+  "PRP & GFC Therapy for Scalp & Face":         U("1742280159636-3a06652ac9d9", 800), // Doctor injecting PRP syringe into scalp
+  "Botox & Fillers for Wrinkle Reduction":      U("1746017062285-13c77e29fc25", 800), // Doctor performing cosmetic filler/botox injection
+  "Chemical Peels & Cosmelan Peel":             U("1713085085470-fba013d67e65", 800), // Doctor applying peel solution to face
+  "Dermapen 4 Microneedling":                   U("1761718209852-54ca4210183e", 800), // Clinical microneedling pen procedure
+  "Hydra Facial | Oxy Facial | Medifacial":     P("3985329", 800),                    // HydraFacial wand procedure on face
+  "HIFU Skin Tightening & Face Lifting":        P("5069432", 800),                    // Ultrasound face lifting device on jawline
+  "Dermaplaning for Smooth Skin":               U("1552693673-1bf958298935", 800),    // Clinical skin exfoliation treatment
+  "Radiofrequency (RF) for Warts & Skin Tags":  U("1551601651-09492b5468b6", 800),    // Gloved doctor performing minor RF procedure
+  "Lip & Eyebrow Micropigmentation":            P("3997989", 800),                    // Precision cosmetic brow/lip procedure
+  "Pimples & Acne Treatment":                   P("3997993", 800),                    // Dermatologist examining & treating facial acne
+  "Hair Loss & Scalp Treatments":               P("8460157", 800),                    // Doctor examining scalp & hair roots
+  "Melasma & Pigmentation Disorders":           U("1737978697863-5d65495b28ef", 800), // Pigmentation & uneven skin tone assessment
+  "Online Video Dermatology Consultation":      P("4033148", 800),                    // Female doctor conducting online video consult
+  "Psoriasis & Vitiligo Management":            P("7579831", 800),                    // Dermatologist examining skin with dermatoscope
+  "Eczema, Lichen Planus & Urticaria":          P("4046567", 800),                    // Clinical rash & eczema skin examination
+  "Skin Allergies & Fungal Infections":         U("1579684385127-1ef15d508118", 800), // Clinical allergy & infection care
+  "Tanning & Burn Care":                        P("5215024", 800),                    // Clinical burn & sun damage skin recovery
+  "Nail Clinic & Nail Doctor":                  P("3997379", 800),                    // Nail & cuticle clinical care
+  "Soprano Ice Platinum Laser Hair Removal":    P("4586726", 800),                    // Soprano laser handpiece hair removal
+  "Diode Laser for Permanent Hair Removal":     P("5069609", 800),                    // Diode laser hair removal procedure
+  "Q-Switched Nd:YAG Laser Toning":             U("1616394584738-fc6e612e71b9", 800), // Facial laser toning with goggles
+  "CO2 Fractional Laser for Scars & Stretch Marks": U("1629909613654-28e377c37b09", 800), // Fractional CO2 laser resurfacing
+  "MNRF for Acne Scars & Open Pores":           P("5069494", 800),                    // Microneedling RF handpiece on cheek
+  "Laser Tattoo Removal":                       P("4586718", 800),                    // Q-switched laser tattoo removal
+  "Laser Vaginal Rejuvenation":                 U("1584515933487-779824d29309", 800)  // Private laser procedure suite
+};
+
+const HERO = {
+  title: "Skin, Hair and Cosmetology Care in Vijayanagar, Bengaluru",
+  sub: "Dr. Ashwini's Skin, Hair and Cosmetology Clinic is a premier Dermatology Clinic in Vijayanagar, Bangalore led by Dr. Ashwini K.R (MBBS, DDVL). Book an in-clinic visit or an online video consultation today.",
+  cta: [["Book In-Clinic / Online","#contact"],["Online Video Consult","#contact"]],
+  stats: [["19+ Yrs","Experience"],["4.5 ★ (194)","Google Reviews"],["Mon–Sat","10am–9pm"]]
+};
+
+const SERVICES = {
+  title: "Our Treatments & Services",
+  sub: "Browse our clinical dermatology, hair restoration, cosmetology, and US-FDA laser treatments in Vijayanagar, Bengaluru. Tap any treatment card to book an in-clinic or online consultation.",
+  groups: [
+    { tab:"Cosmetology & PRP / Anti-Aging", cta:["Book a Cosmetology Consultation","#contact"],
+      items:[
+        ["PRP & GFC Therapy for Scalp & Face","doctor injecting Platelet-Rich Plasma (PRP) & Growth Factor Concentrate directly into the scalp and face for hair regrowth and rejuvenation","PRP / GFC Injection",""],
+        ["Botox & Fillers for Wrinkle Reduction","precision anti-aging Botox and hyaluronic dermal filler injections by dermatologist for wrinkle smoothing and facial contouring","Injectable Procedure",""],
+        ["Chemical Peels & Cosmelan Peel","dermatologist applying medical-grade Azelaic, Yellow, Ferulac and Cosmelan peel solutions for pigmentation, acne and glow","Medical Peel",""],
+        ["Dermapen 4 Microneedling","clinical microneedling pen procedure to stimulate deep collagen for acne scars, open pores and skin texture renewal","Microneedling Pen",""],
+        ["Hydra Facial | Oxy Facial | Medifacial","multi-step hydro-dermabrasion, vortex cleansing, oxygen infusion and antioxidant serum facial for instant radiance","Hydra-Wand Facial",""],
+        ["HIFU Skin Tightening & Face Lifting","High-Intensity Focused Ultrasound transducer treatment for non-surgical face lifting, double chin reduction and jawline tightening","Ultrasound Lift",""],
+        ["Dermaplaning for Smooth Skin","sterile clinical blade exfoliation removing dead skin cells and fine vellus hair for an ultra-smooth, glowing complexion","Exfoliation Procedure",""],
+        ["Radiofrequency (RF) for Warts & Skin Tags","precision radiofrequency cautery procedure for painless, scar-free removal of skin tags, warts, moles and DPN","RF Cautery",""],
+        ["Lip & Eyebrow Micropigmentation","medical-grade semi-permanent cosmetic lip tinting and eyebrow micropigmentation for symmetrical, natural definition","Micropigmentation",""]
+      ]},
+    { tab:"Skin, Hair & Online Care", cta:["Book a Dermatology Consultation","#contact"],
+      items:[
+        ["Pimples & Acne Treatment","clinical acne examination, comedone extraction, chemical peels and customized prescription care for active pimples and scars","Acne & Comedone Care",""],
+        ["Hair Loss & Scalp Treatments","trichoscopy scalp analysis, medical hair regrowth therapy, GFC/PRP boosters and alopecia management","Trichology & Scalp",""],
+        ["Melasma & Pigmentation Disorders","targeted depigmentation treatments, Cosmelan peels and laser toning for stubborn facial melasma, dark spots and uneven tone","Pigmentation Care",""],
+        ["Online Video Dermatology Consultation","consult Dr. Ashwini K.R from home via video/WhatsApp call with digital prescription for acne, hair fall, rashes and follow-ups","Online Consultation",""],
+        ["Psoriasis & Vitiligo Management","specialized long-term medical dermatology and phototherapy protocols for psoriasis plaques and vitiligo patches","Clinical Dermatology",""],
+        ["Eczema, Lichen Planus & Urticaria","barrier-repair therapy and anti-inflammatory relief for chronic itching, hives, allergic contact dermatitis and eczema","Rash & Itch Relief",""],
+        ["Skin Allergies & Fungal Infections","rapid diagnostic evaluation and targeted antifungal, antibacterial and antiviral treatment for stubborn skin infections","Infection Control",""],
+        ["Tanning & Burn Care","medical de-tanning procedures, sunburn recovery and specialized scar-preventive dressing and care for superficial burns","Burn & Tan Recovery",""],
+        ["Nail Clinic & Nail Doctor","medical and surgical nail care for fungal nail infections, ingrown toenails, brittle nails and nail bed disorders","Nail Specialist",""]
+      ]},
+    { tab:"Advanced Laser Clinic", cta:["Book a Laser Consultation","#contact"],
+      items:[
+        ["Soprano Ice Platinum Laser Hair Removal","award-winning Alma Soprano Ice Platinum triple-wavelength laser handpiece for virtually painless permanent hair reduction","Soprano Ice Laser",""],
+        ["Diode Laser for Permanent Hair Removal","high-speed cooling diode laser hair removal for face, underarms, bikini, arms, legs and full body on Indian skin tones","Diode Hair Laser",""],
+        ["Q-Switched Nd:YAG Laser Toning","Q'Laze Nd:YAG laser toning and Hollywood carbon laser peel for deep pigmentation, melasma, tan removal and bright skin","Q'Laze Nd:YAG",""],
+        ["CO2 Fractional Laser for Scars & Stretch Marks","ablative fractional CO2 laser skin resurfacing for deep boxcar/icepick acne scars, surgical scars, warts and stretch marks","Fractional CO2 Laser",""],
+        ["MNRF for Acne Scars & Open Pores","Microneedling Radiofrequency thermal energy delivery into the dermis for dramatic acne scar reduction and pore tightening","MNRF Scar Remodeling",""],
+        ["Laser Tattoo Removal","precision Q-switched laser pulses that safely shatter unwanted dark and multicolor tattoo ink without damaging surrounding skin","Tattoo Laser",""],
+        ["Laser Vaginal Rejuvenation","confidential, non-surgical feminine laser tightening and intimate skin rejuvenation performed by a female dermatologist","Feminine Laser Care",""]
+      ]}
+  ]
+};
+
+const DOCTORS = {
+  title: "Meet Our Dermatologist",
+  sub: "About Dr. Ashwini's Skin, Hair and Cosmetology Clinic in Vijayanagar, Bangalore: compassionate, evidence-based care led by Dr. Ashwini K.R.",
+  items: [
+    { id:"dr-ashwini", photo:0, tag:"Dr. Ashwini K.R · MBBS, DDVL", name:"Dr. Ashwini K.R", quals:"MBBS, DDVL · 19+ Years Experience",
+      role:"Chief Consultant Dermatologist, Trichologist & Cosmetologist",
+      intro:"Dr. Ashwini's Skin, Hair and Cosmetology Clinic is a trusted Dermatology Clinic in Vijayanagar, Bangalore. Dr. Ashwini K.R personally evaluates every patient—both in-clinic and via online video consultations—providing customized medical treatments for skin, hair, and nail conditions alongside US-FDA approved laser and anti-aging procedures.",
+      more:["19+ years of clinical experience in Dermatology, Venereology, Trichology & Cosmetology",
+            "In-house US-FDA approved Alma Soprano ICE Platinum, Q'Laze Nd:YAG, Fractional CO2 Laser, MNRF & Dermapen 4",
+            "Both In-Clinic Procedures & Online Video Consultations available Monday to Saturday",
+            "4.5★ Google Rating across 194+ verified patient reviews in Hampi Nagar, Vijayanagar, Bengaluru"],
+      areas:["PRP & GFC Hair/Face Therapy","Pimples & Acne Scar Revision","Soprano Ice Laser Hair Removal","Melasma & Pigmentation Peels","Hydra / Oxy / Medifacials","Botox, Fillers & HIFU Lift","CO2 & MNRF Laser Resurfacing","Psoriasis, Vitiligo & Eczema","Skin Allergy & Fungal Care","Online Video Consultations"],
+      cta:["Book In-Clinic / Online with Dr. Ashwini","#contact"] }
+  ]
+};
+
+const REVIEWS = {
+  title: "Google Review Summary · 4.5 ★ (194)",
+  sub: "Read what patients say about their skin, hair, PRP, and laser treatments with Dr. Ashwini K.R in Vijayanagar, Bengaluru.",
+  pageSize: 3,
+  items: [
+    { text:"Dr. Ashwini is the best dermatologist around. Very polite and I recommend for all skin and hair problems.", name:"Verified Patient", role:"Skin & Hair Consultation", rating:5, pic:"women/44" },
+    { text:"Cured all the blemishes by treatment, very patient doctor who listens carefully and explains the root cause.", name:"Karthik Gowda", role:"Blemishes & Acne Care", rating:5, pic:"men/32" },
+    { text:"Highly recommend them for anyone seeking quality skincare solutions in Vijayanagar. Visible improvement within weeks.", name:"Divya Rao", role:"Skincare & Cosmetology", rating:5, pic:"women/68" },
+    { text:"Very polite doctor and clean, well-maintained clinic with advanced laser machines. Soprano Ice hair removal was completely painless.", name:"Ananya Shetty", role:"Laser Hair Removal", rating:5, pic:"women/26" },
+    { text:"Visited for severe hair fall and dandruff. After PRP & GFC therapy injections from Dr. Ashwini, my hair fall has reduced drastically.", name:"Prashanth Kumar", role:"PRP & GFC Hair Therapy", rating:5, pic:"men/46" },
+    { text:"Took an online consultation first and then visited for a chemical peel. Very convenient, transparent pricing and in-house pharmacy.", name:"Meghana Murthy", role:"Online & Peel Patient", rating:4, pic:"women/12" }
+  ]
+};
+
+const FAQS = {
+  title: "Frequently Asked Questions",
+  sub: "Clear answers about timings, online consultations, laser treatments, and directions to Dr. Ashwini's Skin, Hair & Cosmetology Clinic.",
+  items: [
+    ["What are the clinic timings of Dr. Ashwini's Skin, Hair and Cosmetology Clinic?","The clinic is open Monday to Saturday from 10:00 AM to 9:00 PM (10:00–21:00). Morning sessions run from 10:30 AM to 1:30 PM and evening sessions continue until 8:00 PM–9:00 PM. Call or WhatsApp +91 80730 21907 to confirm your slot."],
+    ["Are online consultations available with Dr. Ashwini K.R?","Yes! Both In-Clinic Visits and Online Video / WhatsApp Consultations are available. Select 'Online Consultation' in the vertical booking form below to schedule a video call and receive a digital prescription."],
+    ["Where is the clinic located in Vijayanagar, Bengaluru?","We are located at #2094, Ground Floor, 9th Cross, 5th Main Road, Opp. St. John's High School, Hampi Nagar, Vijayanagar, Bengaluru, Karnataka 560104."],
+    ["How is PRP & GFC therapy performed for hair loss and facial rejuvenation?","Dr. Ashwini draws a small sample of your blood, concentrates the growth factors (PRP/GFC) in a sterile centrifuge, and gently injects them into the scalp or facial skin using ultra-fine microneedles to stimulate natural hair regrowth and collagen."],
+    ["What advanced laser and anti-aging procedures are available at the clinic?","We offer Soprano Ice Platinum & Diode Laser Hair Removal, Q'Laze Nd:YAG Laser Toning, Fractional CO2 Laser, MNRF for acne scars, Laser Tattoo Removal, Botox, Dermal Fillers, HIFU face lifting, Dermapen 4 microneedling, and Hydra/Oxy Medifacials."],
+    ["How long does a typical visit take?","Patients typically spend 20 minutes to 1 hour at the clinic depending on whether they are visiting for a consultation, PRP injection, chemical peel, or laser session."]
+  ]
+};
+
+const CONTACT = {
+  title: "Book In-Clinic or Online Consultation",
+  caption: "Dr. Ashwini K.R (MBBS, DDVL) · Mon–Sat: 10:00 AM – 9:00 PM · Vijayanagar, Bengaluru",
+  form: {
+    name: "Enter your full name*",
+    phone: "10-digit mobile / WhatsApp number*",
+    submitInClinic: "Confirm In-Clinic Appointment",
+    submitOnline: "Book Online Video Consultation",
+    okInClinic: "Thank you! Your In-Clinic appointment request with Dr. Ashwini K.R has been received. We will call or WhatsApp you shortly to confirm your slot.",
+    okOnline: "Thank you! Your Online Video Consultation request with Dr. Ashwini K.R has been received. Our team will contact you on WhatsApp (+91 80730 21907) with the video link."
+  }
+};
+
+const FOOTER = {
+  quick:[["Home","#home"],["Services","#services"],["Meet Dr. Ashwini","#doctors"],["Google Reviews","#reviews"],["FAQs & Timings","#faqs"]],
+  colA:{ title:"Dermatology & PRP", items:["PRP & GFC Hair/Face Therapy","Pimples & Acne Treatment","Melasma & Pigmentation","Hydra | Oxy | Medifacial","Botox, Fillers & HIFU","Online Video Consultation"] },
+  colB:{ title:"Laser Treatments", items:["Soprano Ice Hair Removal","Diode Laser Hair Removal","Nd:YAG Laser Skin Toning","CO2 Laser for Scars & Warts","MNRF for Acne Scars","Laser Tattoo Removal"] },
+  legal:["Privacy Policy","Terms & Conditions","Vijayanagar, Bengaluru"]
+};
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+const $ = (s,r=document)=>r.querySelector(s);
+const ic = n=>`<i class="ico ri-${n}" aria-hidden="true"></i>`;
+const I = {
+  arrowUR: ic('arrow-right-up-line'), chevR: ic('arrow-right-s-line'), plus: ic('add-line'),
+  x: ic('close-line'), tick: ic('check-line'), clock: ic('time-line'),
+  menu: ic('menu-line'), left: ic('arrow-left-s-line'), cam: ic('image-line'),
+  wa: ic('whatsapp-fill'), phone: ic('phone-fill'), map: ic('map-pin-fill'), google: ic('google-fill')
+};
+const logoMark = '<i class="ri-heart-pulse-fill" aria-hidden="true"></i>';
+const phNode = ()=>{ const d=document.createElement("div"); d.className="ph"; d.innerHTML='<i class="ri-image-line"></i>'; return d; };
+const img = (key,alt="",idx)=>{
+  const src = idx===undefined ? IMAGES[key] : (IMAGES[key]||[])[idx];
+  return src ? `<img class="img" src="${src}" alt="${alt}" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.src.endsWith('download.jpg')&&!this.dataset.fb){this.dataset.fb='1';this.src='/src/assets/images/dr_ashwini_portrait_1791378136034.jpg';}else{this.replaceWith(phNode())}">`
+             : `<div class="ph" role="img" aria-label="${alt||"Image placeholder"}">${I.cam}</div>`;
+};
+const link = ([t,h],c="btn btn-dark")=>`<a class="${c}" href="${h}">${t}</a>`;
+
+let currentConsultMode = "in-clinic";
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+function renderNav(){
+  $("#logo").innerHTML = `${logoMark}<span>${SITE.name}</span>`;
+  $("#navLinks").innerHTML = SITE.nav.map(([t,h],i)=>`<a href="${h}" class="${i===0?"active":""}">${t}</a>`).join("");
+  $("#burger").innerHTML = I.menu;
+}
+
+function renderHero(){
+  $("#hero").innerHTML = `
+  <div class="hero-left">
+    <div>
+      <span class="pill">${I.clock}${SITE.hours} · ${SITE.phone}</span>
+      <h1 class="h-xl">${HERO.title}</h1>
+      <p class="hero-sub">${HERO.sub}</p>
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="#contact" data-mode="in-clinic"><i class="ico ri-calendar-check-line" aria-hidden="true"></i>${HERO.cta[0][0]}</a>
+        <a class="btn btn-line" href="#contact" data-mode="online"><i class="ico ri-vidicon-line" aria-hidden="true"></i>${HERO.cta[1][0]}</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    ${img("hero","Dr. Ashwini's Skin, Hair & Cosmetology Clinic consultation")}
+    <div class="stats">${HERO.stats.map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>
+  </div>`;
+}
+
+function renderServices(){
+  const g = SERVICES.groups;
+  $("#services").innerHTML = `
+  <div class="center">
+    <h2 class="h-xl">${SERVICES.title}</h2>
+    <p class="sub">${SERVICES.sub}</p>
+    <div class="svc-tabs" role="tablist">
+      ${g.map((x,i)=>`<button class="svc-tab" role="tab" data-i="${i}" aria-selected="${i===0}">${x.tab}<small>${x.items.length}</small></button>`).join("")}
+    </div>
+  </div>
+  <div class="svc-grid" id="svcGrid" role="tabpanel"></div>
+  <div class="center svc-cta" id="svcCta"></div>`;
+
+  const card=(it,n)=>{
+    const [name,desc,badgeTag,photo]=it;
+    const src=photo||SERVICE_PHOTOS[name]||"";
+    return `<a class="svc reveal" style="--i:${(n-1)%4}" href="#contact" data-service="${name}" aria-label="Book ${name}">
+      <div class="svc-media">
+        ${src?`<img class="img" src="${src}" alt="${name}" loading="lazy" referrerpolicy="no-referrer" onload="this.classList.add('loaded');this.parentNode.style.animation='none'" onerror="this.remove()">`:""}
+        <span class="svc-no">${String(n).padStart(2,"0")}</span>
+        ${badgeTag?`<span class="svc-badge">${badgeTag}</span>`:""}
+      </div>
+      <div class="svc-body"><h3>${name}</h3><p>${desc}</p><span class="svc-foot">Book this treatment<span class="circ">${I.arrowUR}</span></span></div>
+    </a>`;
+  };
+
+  const draw=i=>{
+    const x=g[i];
+    const grid=$("#svcGrid");
+    grid.classList.remove("swap"); void grid.offsetWidth;
+    grid.innerHTML = x.items.map((it,k)=>card(it,k+1)).join("");
+    grid.classList.add("swap");
+    revealAll(grid);
+    $("#svcCta").innerHTML = `
+      ${link(x.cta)}
+      <a class="btn btn-line" href="#contact" data-mode="online"><i class="ico ri-vidicon-line" aria-hidden="true"></i>Book Online Video Consultation</a>
+    `;
+    document.querySelectorAll(".svc-tab").forEach(t=>t.setAttribute("aria-selected",String(+t.dataset.i===i)));
+  };
+  draw(0);
+  $("#services").addEventListener("click",e=>{
+    const t=e.target.closest(".svc-tab"); if(t) draw(+t.dataset.i);
+    const cardLink=e.target.closest(".svc");
+    if(cardLink && cardLink.dataset.service){
+      const sel=$("#serviceSelect");
+      if(sel) sel.value = cardLink.dataset.service;
+      if(cardLink.dataset.service.toLowerCase().includes("online")) setConsultMode("online");
+    }
+  });
+}
+
+function renderFaqs(){
+  $("#faqs").innerHTML = `
+  <div class="center"><h2 class="h-xl">${FAQS.title}</h2><p class="sub">${FAQS.sub}</p></div>
+  <div class="faq-list">
+    ${FAQS.items.map((f,i)=>`
+      <details class="qa" name="faq"${i===0?" open":""}>
+        <summary>${f[0]}${I.plus}</summary>
+        <p>${f[1]}</p>
+      </details>`).join("")}
+  </div>
+  <p class="faq-foot">Still have a question? <a href="${SITE.phoneHref}">Call ${SITE.phone}</a> or <a href="${SITE.whatsappHref}" target="_blank" rel="noopener noreferrer">WhatsApp ${SITE.whatsappNumber}</a></p>`;
+}
+
+function renderDoctors(){
+  $("#doctors").innerHTML = `
+  <div class="wrap center">
+    <h2 class="h-xl">${DOCTORS.title}</h2>
+    <p class="sub">${DOCTORS.sub}</p>
+    <div class="dprofiles">
+      ${DOCTORS.items.map((d,i)=>`
+        <article class="dprof${i%2?" flip":""}" id="${d.id}">
+          <div class="dprof-photo">
+            ${img("doctors",d.name,d.photo)}
+            <span class="dprof-tag">${ic("stethoscope-line")}${d.tag}</span>
+          </div>
+          <div class="dprof-body">
+            <div>
+              <h3>${d.name}</h3>
+              <p class="dprof-quals">${d.quals}</p>
+              <p class="dprof-role">${d.role}</p>
+            </div>
+            <p class="dprof-intro">${d.intro}</p>
+            <div>
+              <h4>Clinic Highlights &amp; Expertise</h4>
+              <ul class="dprof-list">${d.more.map(m=>`<li><span class="tick">${I.tick}</span>${m}</li>`).join("")}</ul>
+            </div>
+            <div>
+              <h4>Key Areas of Care</h4>
+              <div class="chips">
+                ${d.areas.map(n=>`<span class="chip">${n}</span>`).join("")}
+                <a class="chip" href="#services">+15 more treatments</a>
+              </div>
+            </div>
+            <div class="dprof-facts">
+              <div class="fact">Timings (In-Clinic &amp; Online)<b>${SITE.hoursLong}</b></div>
+              <div class="fact">Clinic Address (Vijayanagar)<b>${SITE.address}</b></div>
+            </div>
+            <div class="dprof-cta">
+              ${link(d.cta)}
+              <a class="btn btn-wa" href="${SITE.whatsappHref}" target="_blank" rel="noopener noreferrer"><i class="ico ri-whatsapp-line" aria-hidden="true"></i>WhatsApp ${SITE.whatsappNumber}</a>
+            </div>
+          </div>
+        </article>`).join("")}
+    </div>
+  </div>`;
+}
+
+let revPage = 0;
+function renderReviews(){
+  $("#reviews").innerHTML = `
+  <div class="wrap" style="padding:0">
+    <div class="rev-head reveal"><h2 class="h-xl">${REVIEWS.title}</h2><p>${REVIEWS.sub}</p></div>
+    <div class="rev-grid" id="revGrid"></div>
+    <div class="pager">
+      <button class="circ" id="revPrev" aria-label="Previous reviews">${I.left}</button>
+      <div class="dots" id="revDots" aria-hidden="true"></div>
+      <button class="circ fill" id="revNext" aria-label="Next reviews">${I.chevR}</button>
+    </div>
+  </div>`;
+  const initials=n=>n.split(" ").map(w=>w[0]).slice(0,2).join("");
+  const draw=()=>{
+    const s=REVIEWS.pageSize, pages=Math.max(1,Math.ceil(REVIEWS.items.length/s));
+    revPage=Math.min(Math.max(revPage,0),pages-1);
+    const grid=$("#revGrid");
+    grid.classList.remove("swap"); void grid.offsetWidth;
+    grid.innerHTML = REVIEWS.items.slice(revPage*s,revPage*s+s).map((r,i)=>`
+      <article class="rev" style="--i:${i}">
+        <div class="rev-top">
+          <div class="stars" role="img" aria-label="${r.rating} out of 5 stars">${[1,2,3,4,5].map(n=>`<i style="--s:${n}" class="${n<=r.rating?"ri-star-fill":"ri-star-line"}" aria-hidden="true"></i>`).join("")}</div>
+          <span class="rating-num">${r.rating}.0</span>
+        </div>
+        <q>${r.text}</q>
+        <div class="rev-foot">
+          <div class="who">
+            <span class="avatar"><img class="img" src="https://randomuser.me/api/portraits/${r.pic}.jpg" alt="Photo of ${r.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(document.createTextNode('${initials(r.name)}'))"></span>
+            <div><b>${r.name}</b><small>${r.role}</small></div>
+          </div>
+          <span class="qmark" aria-hidden="true"><i class="ri-double-quotes-r"></i></span>
+        </div>
+      </article>`).join("");
+    grid.classList.add("swap");
+    $("#revDots").innerHTML = Array.from({length:pages},(_,k)=>`<span class="${k===revPage?"on":""}"></span>`).join("");
+    $("#revPrev").disabled = revPage===0;
+    $("#revNext").disabled = revPage>=pages-1;
+  };
+  draw();
+  $("#revPrev").onclick=()=>{revPage--;draw()};
+  $("#revNext").onclick=()=>{revPage++;draw()};
+}
+
+function setConsultMode(mode){
+  currentConsultMode = mode;
+  document.querySelectorAll(".consult-btn").forEach(b=>{
+    const active = b.dataset.consult === mode;
+    b.classList.toggle("active", active);
+    b.setAttribute("aria-selected", String(active));
+  });
+  const phoneLabel = $("#phoneLabel");
+  const submitBtn = $("#bookSubmitBtn");
+  if(phoneLabel){
+    phoneLabel.textContent = mode==="online"
+      ? "WhatsApp / Mobile Number (for Video Link)*"
+      : "Mobile / WhatsApp Number*";
+  }
+  if(submitBtn){
+    submitBtn.innerHTML = `<i class="ico ri-${mode==="online"?"vidicon-fill":"calendar-check-fill"}" aria-hidden="true"></i>${mode==="online"?CONTACT.form.submitOnline:CONTACT.form.submitInClinic}`;
+  }
+}
+
+function renderContact(){
+  const f=CONTACT.form;
+  const allOptions = SERVICES.groups.map(grp=>`
+    <optgroup label="${grp.tab}">
+      ${grp.items.map(it=>`<option value="${it[0]}">${it[0]}</option>`).join("")}
+    </optgroup>
+  `).join("");
+
+  $("#contact").innerHTML = `
+  <div class="touch">
+    <h2 class="h-xl">${CONTACT.title}</h2>
+    <div class="faces">${IMAGES.faces.map((_,i)=>`<span class="avatar">${img("faces","Dr. Ashwini K.R",i)}</span>`).join("")}</div>
+    <p class="touch-cap">${CONTACT.caption}</p>
+    <div class="touch-cta">
+      <a class="btn btn-white" href="${SITE.phoneHref}"><i class="ico ri-phone-fill" aria-hidden="true"></i>Call ${SITE.whatsappNumber}</a>
+      <a class="btn btn-wa" href="${SITE.whatsappHref}" target="_blank" rel="noopener noreferrer"><i class="ico ri-whatsapp-fill" aria-hidden="true"></i>WhatsApp ${SITE.whatsappNumber}</a>
+    </div>
+
+    <div class="book-card">
+      <div class="consult-switch" role="tablist" aria-label="Consultation Type">
+        <button type="button" role="tab" data-consult="in-clinic" aria-selected="true" class="consult-btn active">
+          <i class="ico ri-hospital-line" aria-hidden="true"></i>In-Clinic Visit
+        </button>
+        <button type="button" role="tab" data-consult="online" aria-selected="false" class="consult-btn">
+          <i class="ico ri-vidicon-line" aria-hidden="true"></i>Online Consultation
+        </button>
+      </div>
+
+      <form class="form-vertical" id="bookForm" novalidate>
+        <div class="field-group">
+          <label for="patientName">Patient Full Name*</label>
+          <input id="patientName" name="name" type="text" placeholder="${f.name}" autocomplete="name" required>
+        </div>
+        <div class="field-group">
+          <label id="phoneLabel" for="patientPhone">Mobile / WhatsApp Number*</label>
+          <input id="patientPhone" name="phone" type="tel" placeholder="${f.phone}" autocomplete="tel" required>
+        </div>
+        <div class="field-group">
+          <label for="serviceSelect">Select Treatment / Concern*</label>
+          <select id="serviceSelect" name="service">${allOptions}</select>
+        </div>
+        <div class="field-group">
+          <label for="preferredTime">Preferred Time Slot (Mon–Sat)</label>
+          <select id="preferredTime" name="timeSlot">
+            <option value="Morning (10:00 AM – 1:30 PM)">Morning Session (10:00 AM – 1:30 PM)</option>
+            <option value="Afternoon (1:30 PM – 5:00 PM)">Afternoon Session (1:30 PM – 5:00 PM)</option>
+            <option value="Evening (5:00 PM – 9:00 PM)">Evening Session (5:00 PM – 9:00 PM)</option>
+          </select>
+        </div>
+        <button class="btn btn-dark btn-submit" id="bookSubmitBtn" type="submit">
+          <i class="ico ri-calendar-check-fill" aria-hidden="true"></i>${f.submitInClinic}
+        </button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+    </div>
+
+    <div class="details">
+      <div><b><i class="ico ri-map-pin-line" aria-hidden="true"></i>Clinic Address</b>${SITE.address}</div>
+      <div><b><i class="ico ri-time-line" aria-hidden="true"></i>Clinic &amp; Online Timings</b>${SITE.hoursLong}</div>
+      <div><b><i class="ico ri-whatsapp-line" aria-hidden="true"></i>WhatsApp &amp; Phone</b><a href="${SITE.whatsappHref}" target="_blank" rel="noopener noreferrer">${SITE.phone} (WhatsApp)</a></div>
+      <div><b><i class="ico ri-compass-3-line" aria-hidden="true"></i>Google Maps Directions</b><a href="${SITE.mapUrl}" target="_blank" rel="noopener noreferrer">Get Directions →</a></div>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        class="map-frame"
+        title="Map of Dr. Ashwini's Skin, Hair & Cosmetology Clinic in Vijayanagar, Bengaluru"
+        src="${SITE.mapEmbedUrl}"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>`;
+
+  $("#contact").addEventListener("click",e=>{
+    const b = e.target.closest(".consult-btn");
+    if(b && b.dataset.consult) setConsultMode(b.dataset.consult);
+  });
+
+  $("#bookForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const d=new FormData(e.target), msg=$("#formMsg");
+    const nameOk=(d.get("name")||"").trim().length>0;
+    const phoneOk=/^[+\d][\d\s-]{7,}$/.test((d.get("phone")||"").trim());
+    if(!nameOk||!phoneOk){
+      msg.style.color="#c0262d";
+      msg.textContent="Please enter your full name and a valid 10-digit phone number.";
+      return;
+    }
+    msg.style.color="#0b2fa8";
+    msg.textContent = currentConsultMode==="online" ? f.okOnline : f.okInClinic;
+    e.target.reset();
+  });
+}
+
+function renderFooter(){
+  const col=(t,items,hrefs)=>`<div><h4>${t}</h4><ul>${items.map((x,i)=>`<li><a href="${hrefs?hrefs[i]:"#services"}">${x}</a></li>`).join("")}</ul></div>`;
+  $("#footer").innerHTML = `
+  <div class="foot">
+    <div>
+      <a class="logo" href="#home">${logoMark}<span>${SITE.name}</span></a>
+      <p class="foot-tag">${SITE.tagline}</p>
+      <form class="sub-form" onsubmit="return false"><input type="tel" placeholder="Enter Phone for Callback" aria-label="Enter Phone for Callback"><button>Request Call</button></form>
+      <div class="social">
+        <a href="${SITE.whatsappHref}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">${I.wa}</a>
+        <a href="${SITE.phoneHref}" aria-label="Call Clinic">${I.phone}</a>
+        <a href="${SITE.mapUrl}" target="_blank" rel="noopener noreferrer" aria-label="Google Maps">${I.map}</a>
+        <a href="#reviews" aria-label="Google Reviews">${I.google}</a>
+      </div>
+    </div>
+    ${col("Quick Links",FOOTER.quick.map(q=>q[0]),FOOTER.quick.map(q=>q[1]))}
+    ${col(FOOTER.colA.title,FOOTER.colA.items)}
+    ${col(FOOTER.colB.title,FOOTER.colB.items)}
+    <div class="mark" aria-hidden="true">${SITE.name}</div>
+    <div class="legal">${FOOTER.legal.map(l=>`<a href="#contact">${l}</a>`).join("")}</div>
+  </div>`;
+}
+
+/* ---------- scroll reveal + progress bar ---------- */
+const revealIO = new IntersectionObserver(es=>es.forEach(en=>{
+  if(en.isIntersecting){ en.target.classList.add("in"); revealIO.unobserve(en.target); }
+}),{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+function revealAll(root=document){ root.querySelectorAll(".reveal:not(.in)").forEach(el=>revealIO.observe(el)); }
+function tagReveal(){
+  const mark=(sel,step=0)=>document.querySelectorAll(sel).forEach((el,i)=>{ el.classList.add("reveal"); if(step) el.style.setProperty("--i",i*step); });
+  mark(".hero-left .pill"); mark(".hero-left h1"); mark(".hero-sub"); mark(".hero-cta");
+  mark(".hero-right"); mark(".stat",1);
+  mark("#services .center > *"); mark("#doctors .wrap > h2"); mark("#doctors .wrap > .sub");
+  mark(".dprof"); mark("#faqs .center > *"); mark(".qa",1); mark(".faq-foot");
+  mark(".touch"); mark(".foot");
+}
+const progress=$("#progress");
+addEventListener("scroll",()=>{
+  const h=document.documentElement; const max=h.scrollHeight-h.clientHeight;
+  progress.style.transform="scaleX("+(max>0?h.scrollTop/max:0)+")";
+},{passive:true});
+
+/* ---------- boot ---------- */
+renderNav(); renderHero(); renderServices(); renderFaqs();
+renderDoctors(); renderReviews(); renderContact(); renderFooter();
+tagReveal(); revealAll();
+
+document.addEventListener("click",e=>{
+  const modeBtn = e.target.closest("[data-mode]");
+  if(modeBtn) setConsultMode(modeBtn.dataset.mode);
+});
+
+/* mobile menu + active link on scroll */
+const setMenu=o=>{
+  $("#navLinks").classList.toggle("open",o);
+  const b=$("#burger"); b.setAttribute("aria-expanded",String(o)); b.setAttribute("aria-label",o?"Close menu":"Open menu");
+  b.innerHTML = o?I.x:I.menu;
+};
+$("#burger").addEventListener("click",()=>setMenu(!$("#navLinks").classList.contains("open")));
+$("#navLinks").addEventListener("click",()=>setMenu(false));
+document.addEventListener("click",e=>{ if(!e.composedPath().some(n=>n.classList&&n.classList.contains("nav"))) setMenu(false); });
+const links=[...document.querySelectorAll("#navLinks a")];
+const io=new IntersectionObserver(es=>es.forEach(en=>{
+  if(en.isIntersecting){ links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+en.target.id)); }
+}),{rootMargin:"-45% 0px -50% 0px"});
+["home","services","doctors","reviews","faqs","contact"].forEach(id=>{const el=document.getElementById(id); el&&io.observe(el);});
+</script>
+</body>
+</html>
